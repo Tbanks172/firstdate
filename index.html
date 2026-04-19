@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First Date Edition — Stop Having Dates You Forget</title>
+<meta name="description" content="155 questions. 10 categories. No small talk. The First Date Edition takes you from surface-level to soul-level — fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+font-family: ‘Lato’, ‘Helvetica Neue’, Helvetica, Arial, sans-serif;
+background: #ffffff;
+color: #1A0A2E;
+overflow-x: hidden;
+line-height: 1.6;
+}
+
+/* ANNOUNCEMENT BAR */
+.topbar {
+background: #E8436A;
+text-align: center;
+padding: 11px 16px;
+font-size: 13px;
+font-weight: 700;
+color: #ffffff;
+letter-spacing: 0.5px;
+}
+
+/* NAV */
+nav {
+background: #ffffff;
+border-bottom: 1.5px solid #E8DFF0;
+padding: 16px 32px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.nav-logo {
+font-family: ‘Playfair Display’, Georgia, ‘Times New Roman’, serif;
+font-size: 21px;
+font-weight: 900;
+color: #1A0A2E;
+text-decoration: none;
+}
+.nav-logo span { color: #E8436A; }
+.nav-cta {
+background: #E8436A;
+color: #ffffff;
+padding: 10px 22px;
+border-radius: 50px;
+font-size: 13px;
+font-weight: 700;
+text-decoration: none;
+white-space: nowrap;
+transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .87; }
+
+/* HERO */
+.hero {
+background: #FDF8F2;
+padding: 80px 24px 96px;
+text-align: center;
+}
+.hero-badge {
+display: inline-block;
+background: rgba(232,67,106,0.1);
+border: 1.5px solid rgba(232,67,106,0.28);
+color: #E8436A;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+padding: 8px 20px;
+border-radius: 50px;
+margin-bottom: 30px;
+}
+.hero h1 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(40px, 8vw, 80px);
+font-weight: 900;
+line-height: 1.05;
+color: #1A0A2E;
+margin-bottom: 14px;
+letter-spacing: -1.5px;
+}
+.hero h1 em { font-style: italic; color: #E8436A; }
+.hero-sub {
+font-size: clamp(16px, 2.5vw, 21px);
+color: #4A3F55;
+font-weight: 300;
+max-width: 580px;
+margin: 0 auto 40px;
+line-height: 1.7;
+}
+.hero-sub strong { font-weight: 700; color: #1A0A2E; }
+.hero-btn {
+display: inline-block;
+background: #E8436A;
+color: #ffffff;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 19px;
+font-weight: 700;
+padding: 18px 52px;
+border-radius: 50px;
+text-decoration: none;
+box-shadow: 0 8px 28px rgba(232,67,106,0.35);
+transition: transform .2s, box-shadow .2s;
+}
+.hero-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(232,67,106,0.42); }
+.hero-note { margin-top: 14px; font-size: 12px; color: #8A7A9A; letter-spacing:.5px; }
+.hero-stats {
+display: flex;
+justify-content: center;
+gap: 48px;
+flex-wrap: wrap;
+margin-top: 64px;
+padding-top: 40px;
+border-top: 1px solid #E8DFF0;
+}
+.stat { text-align: center; }
+.stat-n {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 42px;
+font-weight: 900;
+color: #E8436A;
+line-height: 1;
+}
+.stat-l { font-size: 11px; color: #8A7A9A; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
+
+/* SECTIONS */
+.sec { padding: 88px 24px; }
+.in { max-width: 700px; margin: 0 auto; }
+.in.wide { max-width: 920px; }
+.bg-off { background: #F5F0EB; }
+.bg-wh  { background: #ffffff; }
+
+/* EYEBROW */
+.ey {
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: #E8436A;
+margin-bottom: 18px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.ey::after { content:’’; height:1.5px; width:40px; background:rgba(232,67,106,0.28); border-radius:2px; }
+
+/* HEADLINE */
+h2.hl {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(28px, 4.5vw, 44px);
+font-weight: 900;
+line-height: 1.15;
+margin-bottom: 28px;
+color: #1A0A2E;
+letter-spacing: -0.5px;
+}
+h2.hl em { font-style: italic; color: #E8436A; }
+
+/* BODY TEXT */
+.bt { font-size: 17px; line-height: 1.85; color: #4A3F55; font-weight: 300; margin-bottom: 20px; }
+.bt strong { font-weight: 700; color: #1A0A2E; }
+
+/* PULLQUOTE */
+.pq {
+border-left: 4px solid #E8436A;
+background: rgba(232,67,106,0.05);
+padding: 22px 28px;
+margin: 36px 0;
+border-radius: 0 10px 10px 0;
+}
+.pq p {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(17px, 2.5vw, 22px);
+font-style: italic;
+color: #1A0A2E;
+line-height: 1.5;
+margin: 0;
+}
+
+/* DARK STRIP */
+.ds { background: #1A0A2E; padding: 88px 24px; text-align: center; }
+.ds .in { max-width: 640px; }
+.ds h2 {
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: clamp(28px, 4.5vw, 46px);
+font-weight: 900;
+color: #ffffff;
+line-height: 1.15;
+margin-bottom: 20px;
+letter-spacing: -0.5px;
+}
+.ds h2 em { color: #C9920A; font-style: italic; }
+.ds p { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.85; font-weight: 300; margin-bottom: 16px; }
+.ds p strong { color: #ffffff; font-weight: 700; }
+
+/* FEATURE GRID */
+.fg { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 12px; }
+.fc { background: #F5F0EB; border: 1.5px solid #E8DFF0; border-radius: 16px; padding: 28px 26px; }
+.fc-icon { font-size: 28px; margin-bottom: 14px; }
+.fc-title { font-family: ‘Playfair Display’, Georgia, serif; font-size: 18px; font-weight: 700; color: #1A0A2E; margin-bottom: 8px; }
+.fc-desc { font-size: 14px; color: #4A3F55; line-height: 1.7; font-weight: 300; }
+
+/* CATEGORY LIST */
+.cl { display: grid; gap: 12px; margin-top: 12px; }
+.ci { display: flex; align-items: flex-start; gap: 16px; padding: 20px 22px; border-radius: 14px; border: 1.5px solid #E8DFF0; background: #F5F0EB; transition: transform .15s; }
+.ci:hover { transform: translateX(4px); }
+.ci-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.ci-label { font-weight: 700; font-size: 15px; color: #1A0A2E; margin-bottom: 4px; }
+.ci-label .qs { font-weight: 300; font-size: 12px; color: #8A7A9A; }
+.ci-desc { font-size: 13px; color: #4A3F55; line-height: 1.6; font-weight: 300; }
+
+/* TESTIMONIALS */
+.tg { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 12px; }
+.tc { background: #F5F0EB; border: 1.5px solid #E8DFF0; border-radius: 16px; padding: 28px 24px; }
+.tc-stars { font-size: 14px; margin-bottom: 12px; color: #C9920A; }
+.tc-text { font-size: 15px; color: #4A3F55; line-height: 1.7; font-style: italic; font-weight: 300; margin-bottom: 16px; }
+.tc-name { font-weight: 700; font-size: 13px; color: #1A0A2E; }
+.tc-role { font-size: 12px; color: #8A7A9A; }
+
+/* CTA */
+.cta-sec { background: #FDF8F2; padding: 100px 24px; text-align: center; border-top: 1px solid #E8DFF0; }
+.cta-box { background: #ffffff; border: 1.5px solid #E8DFF0; border-radius: 24px; padding: 56px 40px; max-width: 580px; margin: 0 auto; box-shadow: 0 16px 48px rgba(0,0,0,0.07); }
+.cta-box h2 { font-family: ‘Playfair Display’, Georgia, serif; font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: #1A0A2E; line-height: 1.2; margin-bottom: 16px; }
+.cta-box h2 em { color: #E8436A; font-style: italic; }
+.cta-box > p { font-size: 16px; color: #4A3F55; line-height: 1.75; font-weight: 300; margin-bottom: 32px; }
+.cta-price { font-family: ‘Playfair Display’, Georgia, serif; font-size: 68px; font-weight: 900; color: #1A0A2E; line-height: 1; margin-bottom: 6px; }
+.cta-note { font-size: 14px; color: #8A7A9A; margin-bottom: 28px; }
+.cta-btn {
+display: block;
+width: 100%;
+background: #E8436A;
+color: #ffffff;
+font-family: ‘Playfair Display’, Georgia, serif;
+font-size: 20px;
+font-weight: 700;
+padding: 20px;
+border-radius: 14px;
+text-decoration: none;
+box-shadow: 0 8px 28px rgba(232,67,106,0.3);
+transition: transform .2s, box-shadow .2s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(232,67,106,0.42); }
+.cta-inc { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+.cta-row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #4A3F55; font-weight: 300; text-align: left; }
+.cta-chk { width: 22px; height: 22px; background: rgba(39,174,96,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #27AE60; flex-shrink: 0; font-weight: 700; }
+.cta-guar { margin-top: 24px; padding-top: 24px; border-top: 1px solid #E8DFF0; font-size: 13px; color: #8A7A9A; line-height: 1.6; }
+.cta-guar a { color: #E8436A; text-decoration: none; }
+
+/* FOOTER */
+footer { background: #1A0A2E; padding: 56px 24px; text-align: center; }
+.fl { font-family: ‘Playfair Display’, Georgia, serif; font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 20px; }
+.fl span { color: #E8436A; }
+footer p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 2; }
+footer a { color: #E8436A; text-decoration: none; }
+
+/* MOBILE */
+@media (max-width: 600px) {
+nav { padding: 14px 16px; }
+.nav-cta { padding: 9px 14px; font-size: 12px; }
+.cta-box { padding: 36px 20px; }
+.hero-stats { gap: 24px; }
+.hero-btn { padding: 16px 32px; font-size: 17px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">🔥 Digital Download — Instant Access After Purchase</div>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">First<span>Date</span></a>
+  <a href="https://morningkoinonia.selar.com/61fu747hj7" target="_blank" class="nav-cta">Get It Now — $26.99 →</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+
+<section class="hero">
+  <div class="hero-badge">155 Questions &middot; 10 Categories &middot; No Small Talk</div>
+  <h1>Stop Having Dates<br>You <em>Forget.</em></h1>
+  <p class="hero-sub">
+    The First Date Edition is a <strong>155-question conversation deck</strong> that takes you from surface-level to soul-level — fast. No awkward silence. No interview questions. Just real conversation that actually goes somewhere.
+  </p>
+  <a href="https://morningkoinonia.selar.com/61fu747hj7" target="_blank" class="hero-btn">Get Your Copy Now — $26.99 →</a>
+  <p class="hero-note">Digital download &middot; Instant access &middot; Use tonight</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">155</div><div class="stat-l">Questions</div></div>
+    <div class="stat"><div class="stat-n">10</div><div class="stat-l">Categories</div></div>
+    <div class="stat"><div class="stat-n">0</div><div class="stat-l">Survivors</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Honest Evening</div></div>
+  </div>
+</section>
+
+<!-- ═══ THE VOID ═══ -->
+
+<section class="sec bg-wh">
+  <div class="in">
+    <div class="ey">🌧️ Sound Familiar?</div>
+    <h2 class="hl">You asked what they do for work.<br>They told you.<br><em>And then&hellip; nothing.</em></h2>
+    <p class="bt">You asked where they're from. They told you. You asked if they like it here. They said yes. And suddenly you're 45 minutes into a date, on your second drink, having said absolutely nothing that matters.</p>
+    <p class="bt">The small talk kept you safe. But <strong>safe doesn't build connection. Safe keeps you strangers with good manners.</strong></p>
+    <p class="bt">Maybe you've walked away from dates thinking — they seemed fine, but I don't actually know anything real about them. You don't know what they believe about loyalty. You don't know what fear has stopped them. You don't know whether they'd work a job they hate for three years to fund something they love.</p>
+    <div class="pq">
+      <p>"We talked for three hours and I still didn't know if we actually had anything real."</p>
+    </div>
+    <p class="bt">You didn't need another polished performance. You needed a real conversation — the kind where someone says something they've never said on a date before, and you both feel it.</p>
+    <p class="bt">The problem isn't you. The problem is <strong>nobody gave you the right questions.</strong></p>
+  </div>
+</section>
+
+<!-- ═══ DARK BREAK ═══ -->
+
+<div class="ds">
+  <div class="in">
+    <h2>What if the <em>right question</em><br>changed the whole evening?</h2>
+    <p>Not an icebreaker. Not a party game. <strong>A real conversation</strong> — the kind most people never have on a first date. Or a fifth. Or a fiftieth.</p>
+    <p>The truth is, most people are waiting to be asked something worth answering. They have opinions, fears, and whole inner worlds they never get to talk about — because nobody ever creates the space.</p>
+    <p><strong>This deck creates the space.</strong></p>
+  </div>
+</div>
+
+<!-- ═══ THE PERCH ═══ -->
+
+<section class="sec bg-off">
+  <div class="in">
+    <div class="ey">🌈 The Shift</div>
+    <h2 class="hl">Now imagine a date where <em>both of you actually showed up.</em></h2>
+    <p class="bt">Not the polished version. Not the one with their life together who says all the right things. The real one — who has complicated feelings about ambition, who's still processing what they were taught about money, who has a genuine and unfiltered opinion about whether love is a feeling or a decision.</p>
+    <p class="bt"><strong>The First Date Edition is a 155-question conversation deck</strong> designed to get you there — not by forcing vulnerability, but by creating permission for it. There's a card to hide behind. A question to blame. And then suddenly you're having the conversation you didn't know you needed.</p>
+    <p class="bt">Spread across 10 thoughtfully crafted categories — from Money &amp; Ambition to Parenting &amp; How We Were Raised — every single question was written to do one thing: <strong>reveal who someone actually is, not who they're performing.</strong></p>
+    <div class="pq">
+      <p>This is how you find out if there's actually something there — not after six months of dating, but after one honest evening.</p>
+    </div>
+    <p class="bt">And here's what else happens: these questions don't just draw them out. They give you room to say things you've never said on a date before. Things that make you interesting. Things that make someone drive home thinking about you.</p>
+  </div>
+</section>
+
+<!-- ═══ THE SOAR ═══ -->
+
+<section class="sec bg-wh">
+  <div class="in">
+    <div class="ey">🕊️ What Changes</div>
+    <h2 class="hl">What if you never had to sit through another <em>hollow date</em> again?</h2>
+    <p class="bt">Picture finishing an evening and actually knowing who you just spent time with. Not their job title. Who they are when things go wrong. What they'd fight for. Whether they're living their own life or someone else's expectations.</p>
+    <p class="bt">That's what this deck gives you.</p>
+    <div class="fg">
+      <div class="fc">
+        <div class="fc-icon">💬</div>
+        <div class="fc-title">You'll know if it's real — fast</div>
+        <div class="fc-desc">Real conversations reveal real incompatibilities — and real chemistry — faster than months of careful small talk. Stop wasting time finding out who someone isn't.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">🧠</div>
+        <div class="fc-title">You'll leave knowing who they actually are</div>
+        <div class="fc-desc">Not their job or Instagram. Their inner voice when things go wrong. What they believe about loyalty. What they'd regret at 50. The stuff that actually matters.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">🔥</div>
+        <div class="fc-title">You'll be genuinely interesting to them too</div>
+        <div class="fc-desc">These questions give you room to say things out loud that most people never say on dates. That kind of honesty is rare. And rare is magnetic.</div>
+      </div>
+      <div class="fc">
+        <div class="fc-icon">🌊</div>
+        <div class="fc-title">You'll remember this one</div>
+        <div class="fc-desc">There's a difference between a conversation you'll forget and one you replay at 2am three weeks later. These create the second kind — every time.</div>
+      </div>
+    </div>
+    <p class="bt" style="margin-top:36px; font-style:italic; font-size:19px; color:#1A0A2E; font-weight:400; line-height:1.6;">This isn't just a game. It's the thing that turns a stranger into a story worth knowing.</p>
+  </div>
+</section>
+
+<!-- ═══ WHAT'S INSIDE ═══ -->
+
+<section class="sec bg-off">
+  <div class="in wide">
+    <div class="ey">📦 What's Inside</div>
+    <h2 class="hl" style="max-width:560px;">155 questions. 10 categories. Each one designed to go somewhere real.</h2>
+    <div class="cl">
+
+```
+  <div class="ci" style="border-color:rgba(229,80,57,0.25);background:rgba(229,80,57,0.05);">
+    <div class="ci-dot" style="background:#E55039;"></div>
+    <div><div class="ci-label">01 &mdash; Money &amp; Ambition <span class="qs">(20 questions)</span></div>
+    <div class="ci-desc">What they truly believe about wealth, work, and financial independence — not the aspirational answer, the honest one. Do they separate their self-worth from their net worth? Would they work a job they hate for three years to fund something they love?</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(108,92,231,0.25);background:rgba(108,92,231,0.05);">
+    <div class="ci-dot" style="background:#6C5CE7;"></div>
+    <div><div class="ci-label">02 &mdash; Identity &amp; Psychology <span class="qs">(20 questions)</span></div>
+    <div class="ci-desc">What drives them, what stops them, and what their inner voice sounds like at their lowest. What they've had to consciously unlearn. Whether they're living their own life — or someone else's expectations.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(196,154,0,0.25);background:rgba(196,154,0,0.05);">
+    <div class="ci-dot" style="background:#C49A00;"></div>
+    <div><div class="ci-label">03 &mdash; Lifestyle &amp; Aesthetics <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">Who they really are when no one's watching. How they spend their Saturdays, what they own that genuinely makes their life better — and the big one: is the life they're building for themselves, or for people watching?</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(41,128,185,0.25);background:rgba(41,128,185,0.05);">
+    <div class="ci-dot" style="background:#2980B9;"></div>
+    <div><div class="ci-label">04 &mdash; Society &amp; Systems <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">What they actually think about the world they grew up in — culture, country, community responsibility. What they'd fix first if they had real power. The conversations most people avoid entirely on a first date.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(39,174,96,0.25);background:rgba(39,174,96,0.05);">
+    <div class="ci-dot" style="background:#27AE60;"></div>
+    <div><div class="ci-label">05 &mdash; Purpose &amp; Direction <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">Did they choose their path deliberately — or fall into it? What would they regret not trying by 50? Is work-life balance real to them, or just what people say when they're burning out?</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(232,67,106,0.25);background:rgba(232,67,106,0.05);">
+    <div class="ci-dot" style="background:#E8436A;"></div>
+    <div><div class="ci-label">06 &mdash; Relationships, Values &amp; Depth <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">What they believe about love, loyalty, intimacy, and vulnerability. Whether love is a feeling or a decision. What they need in a relationship they've never quite known how to ask for.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(233,30,140,0.25);background:rgba(233,30,140,0.05);">
+    <div class="ci-dot" style="background:#E91E8C;"></div>
+    <div><div class="ci-label">07 &mdash; Feminism &amp; Womanhood <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">Honest, nuanced conversations about strength, expectation, financial independence, and sisterhood. What society still tells women to shrink that they refuse to. Whether "having it all" is empowering or an exhausting trap.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(0,151,167,0.25);background:rgba(0,151,167,0.05);">
+    <div class="ci-dot" style="background:#0097A7;"></div>
+    <div><div class="ci-label">08 &mdash; Masculinity &amp; What It Actually Means <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">What men were taught to suppress — and what real strength actually looks like. Whether masculinity is in crisis or being redefined. Whether vulnerability in a man is still uncomfortable, honestly.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(123,31,162,0.25);background:rgba(123,31,162,0.05);">
+    <div class="ci-dot" style="background:#7B1FA2;"></div>
+    <div><div class="ci-label">09 &mdash; False Masculinity &amp; False Feminism <span class="qs">(10 questions)</span></div>
+    <div class="ci-desc">The questions that cut through performance — where real growth ends and armour begins. Whether "alpha male" culture is confidence or insecurity in a louder outfit. Where the language lies.</div></div>
+  </div>
+
+  <div class="ci" style="border-color:rgba(230,81,0,0.25);background:rgba(230,81,0,0.05);">
+    <div class="ci-dot" style="background:#E65100;"></div>
+    <div><div class="ci-label">10 &mdash; Parenting &amp; How We Were Raised <span class="qs">(15 questions)</span></div>
+    <div class="ci-desc">The most revealing category in the deck. Because how someone was loved as a child shapes everything about how they love as an adult. Whether they want children — and if that answer is truly theirs.</div></div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+
+<section class="sec bg-wh">
+  <div class="in wide">
+    <div class="ey">💬 What People Are Saying</div>
+    <h2 class="hl" style="max-width:480px;">The conversation you've been waiting to have.</h2>
+    <div class="tg">
+      <div class="tc">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="tc-text">"We used this on our third date and ended up talking for five hours. I knew by question 12 that this was someone completely different from anyone I'd met before."</div>
+        <div class="tc-name">Amara K.</div><div class="tc-role">Lagos, Nigeria</div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="tc-text">"I've been on so many dates where I walked away not really knowing them. This deck fixed that completely. We went places in one evening that most couples don't reach in months."</div>
+        <div class="tc-name">Jordan T.</div><div class="tc-role">London, UK</div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="tc-text">"The Parenting category broke us both open in the best way. I've never felt more seen by someone I'd just met. We're still talking about that evening six months later."</div>
+        <div class="tc-name">Nadia S.</div><div class="tc-role">Toronto, Canada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA / PRICING ═══ -->
+
+<section class="cta-sec" id="get">
+  <div class="cta-box">
+    <h2>Stop having dates<br>you <em>forget.</em></h2>
+    <p>The First Date Edition is a beautifully designed digital deck — yours instantly. No shipping. No waiting. Just 155 honest questions and one evening that actually goes somewhere.</p>
+    <div class="cta-price">$26.99</div>
+    <div class="cta-note">One-time purchase &middot; Instant digital download</div>
+    <a href="https://morningkoinonia.selar.com/61fu747hj7" target="_blank" class="cta-btn">Get Instant Access — $26.99 →</a>
+    <div class="cta-inc">
+      <div class="cta-row"><div class="cta-chk">&#10003;</div><span>155 questions across 10 powerful categories</span></div>
+      <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Beautifully designed deck — ready to use tonight</span></div>
+      <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Works on any phone, tablet, or laptop</span></div>
+      <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Instant download — no waiting, no shipping</span></div>
+      <div class="cta-row"><div class="cta-chk">&#10003;</div><span>Use on a first date, fifth date, or with someone you've known for years</span></div>
+    </div>
+    <div class="cta-guar">
+      &#128274; <strong>Secure checkout via Selar.</strong> Digital product — no physical items shipped. You'll receive your file immediately after payment. Need help? Email <a href="mailto:tomiwabankole172@gmail.com">tomiwabankole172@gmail.com</a> — I'll get back to you personally.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+
+<footer>
+  <div class="fl">First<span>Date</span> Edition</div>
+  <p>
+    A digital conversation deck by T.BANKS<br>
+    <a href="mailto:tomiwabankole172@gmail.com">tomiwabankole172@gmail.com</a><br><br>
+    Digital product &middot; No physical items shipped<br>
+    Thank you for letting this be part of your story. &mdash; T.BANKS xx
+  </p>
+</footer>
+
+</body>
+</html>
